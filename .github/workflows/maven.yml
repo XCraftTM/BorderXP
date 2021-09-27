@@ -24,3 +24,8 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: Upload Maven build artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: BorderXP-0.1-1.17.1.jar
+        path: /target/BorderXP-1.0-SNAPSHOT.jar
