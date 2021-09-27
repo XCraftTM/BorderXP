@@ -25,7 +25,7 @@ public class PlayerConnectionEvent implements Listener {
         Location loc = Bukkit.getWorld("world").locateNearestStructure(player.getLocation(), StructureType.VILLAGE, 2, false).getBlock().getLocation();
         loc.add(0,80,0);
         player.setHealth(20);
-        player.setFoodLevel(25);
+        player.setFoodLevel(26);
 
         //if (player.hasPlayedBefore()) {
         world.setSpawnLocation(loc);
