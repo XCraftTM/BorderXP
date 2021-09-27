@@ -19,7 +19,7 @@ public class PlayerConnectionEvent implements Listener {
     }
 
     @EventHandler
-    public void onFirstJoin(PlayerJoinEvent event) throws InterruptedException {
+    public void onFirstJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
         World world = Bukkit.getWorld("world");
         Location loc = Bukkit.getWorld("world").locateNearestStructure(player.getLocation(), StructureType.VILLAGE, 2, false).getBlock().getLocation();
@@ -27,12 +27,12 @@ public class PlayerConnectionEvent implements Listener {
         player.setHealth(20);
         player.setFoodLevel(26);
 
-        //if (player.hasPlayedBefore()) {
+        if (player.hasPlayedBefore()) {
         world.setSpawnLocation(loc);
         player.teleport(loc);
         WorldBorder border =  Objects.requireNonNull(Bukkit.getWorld("world")).getWorldBorder();
         border.setCenter(loc.getBlockX() + 0.5, loc.getBlockZ() + 0.5);
         border.setSize(1);
-        //}
+        }
     }
 }
