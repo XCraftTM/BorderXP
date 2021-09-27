@@ -1,0 +1,11 @@
+main: de.xcrafttm.borderxp.Main
+name: BorderXP
+version: 1.0
+api-version: 1.17
+author: XCraftTM
+
+commands:
+  bordertoggle:
+    aliases: bt
+    description: Toggle BorderXP Challenge
+    usage: /<command>
