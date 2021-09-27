@@ -22,8 +22,8 @@ public class BorderToggle implements CommandExecutor {
         if (commandSender instanceof Player) {
             Main.isEnabled = !Main.isEnabled;
             if (Main.isEnabled) {
-                commandSender.sendMessage("§8[§6BorderXP§8] §6Challenge §aactivated!");
-            } else commandSender.sendMessage("§8[§6BorderXP§8] §6Challenge §cDeactivated!");
+                commandSender.sendMessage("§8[§6BorderXP§8] §6Challenge §aEnabled!");
+            } else commandSender.sendMessage("§8[§6BorderXP§8] §6Challenge §cDisabled!");
         }
         return true;
     }
