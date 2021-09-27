@@ -1,7 +1,7 @@
 # This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
-name: Java CI with Maven
+name: Build
 
 on:
   push:
@@ -12,7 +12,7 @@ on:
 jobs:
   build:
 
-    runs-on: windows-10
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -24,3 +24,8 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: Upload Maven build artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: BorderXP-0.1-1.17.1.jar
+        path: target/BorderXP-1.0-SNAPSHOT.jar
