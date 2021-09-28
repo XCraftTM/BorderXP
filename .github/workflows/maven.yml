@@ -27,5 +27,5 @@ jobs:
     - name: Upload Maven build artifact
       uses: actions/upload-artifact@v2
       with:
-        name: BorderXP-1.0.jar
-        path: target/BorderXP-1.0.jar
+        name: BorderXP-1.1.jar
+        path: target/BorderXP-1.1.jar
