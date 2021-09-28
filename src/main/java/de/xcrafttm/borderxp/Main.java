@@ -4,10 +4,8 @@ import de.xcrafttm.borderxp.commands.BorderToggle;
 import de.xcrafttm.borderxp.listener.PlayerConnectionEvent;
 import org.bukkit.*;
 import org.bukkit.command.ConsoleCommandSender;
-import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerExpChangeEvent;
 import org.bukkit.event.player.PlayerLevelChangeEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -36,10 +34,6 @@ public class Main extends JavaPlugin implements Listener {
 
         World world = Bukkit.getWorld("world");
         world.setGameRule(GameRule.SPAWN_RADIUS, 0);
-
-        //Bukkit.getScheduler().scheduleSyncRepeatingTask(this, runnable, 0, 1);
-
-        //runnable.run();
     }
 
     @Override
