@@ -50,8 +50,10 @@ public class Main extends JavaPlugin implements Listener {
             if (maxXP.get() < player.getLevel())
                 maxXP.set((int) player.getLevel());
         });
-        WorldBorder border = Objects.requireNonNull(Bukkit.getWorld("world")).getWorldBorder();
-        border.setSize(maxXP.get(), 5);
+        WorldBorder worldborder = Objects.requireNonNull(Bukkit.getWorld("world")).getWorldBorder();
+        WorldBorder netherborder = Objects.requireNonNull(Bukkit.getWorld("world_nether")).getWorldBorder();
+        worldborder.setSize(maxXP.get(), 5);
+        netherborder.setSize(maxXP.get(), 5);
 
     }
     private void init() {
