@@ -39,7 +39,7 @@ public class PlayerConnectionEvent implements Listener {
         WorldBorder border =  Objects.requireNonNull(Bukkit.getWorld("world")).getWorldBorder();
         border.setCenter(loc.getBlockX() + 0.5, loc.getBlockZ() + 0.5);
         border.setSize(1);
-        player.setExp(1);
+        player.setLevel(1);
         }
     }
 }

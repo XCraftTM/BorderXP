@@ -52,8 +52,10 @@ public class Main extends JavaPlugin implements Listener {
         });
         WorldBorder worldborder = Objects.requireNonNull(Bukkit.getWorld("world")).getWorldBorder();
         WorldBorder netherborder = Objects.requireNonNull(Bukkit.getWorld("world_nether")).getWorldBorder();
+        WorldBorder endborder = Objects.requireNonNull(Bukkit.getWorld("world_the_end")).getWorldBorder();
         worldborder.setSize(maxXP.get(), 5);
         netherborder.setSize(maxXP.get(), 5);
+        endborder.setSize(maxXP.get(), 5);
 
     }
     private void init() {
