@@ -41,6 +41,10 @@ public class Main extends JavaPlugin implements Listener {
         console.sendMessage("§8[§6BorderXP§8] §cPlugin Disabled!");
     }
 
+    private void init() {
+        new PlayerConnectionEvent(this);
+    }
+
     @EventHandler
     public void onPlayerExpChange(PlayerLevelChangeEvent event) {
         if (!Main.isEnabled)
@@ -48,7 +52,7 @@ public class Main extends JavaPlugin implements Listener {
         AtomicInteger maxXP = new AtomicInteger(1);
         Bukkit.getOnlinePlayers().forEach(player -> {
             if (maxXP.get() < player.getLevel())
-                maxXP.set((int) player.getLevel());
+                maxXP.set(player.getLevel());
         });
         WorldBorder worldborder = Objects.requireNonNull(Bukkit.getWorld("world")).getWorldBorder();
         WorldBorder netherborder = Objects.requireNonNull(Bukkit.getWorld("world_nether")).getWorldBorder();
@@ -58,7 +62,5 @@ public class Main extends JavaPlugin implements Listener {
         endborder.setSize(maxXP.get(), 5);
 
     }
-    private void init() {
-        new PlayerConnectionEvent(this);
-    }
+
 }
