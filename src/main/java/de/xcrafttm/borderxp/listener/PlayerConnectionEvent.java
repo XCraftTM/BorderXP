@@ -53,8 +53,9 @@ public class PlayerConnectionEvent implements Listener {
                 if (maxXP.get() < player1.getLevel())
                     maxXP.set((int) player1.getLevel());
             });
-        netherborder.setSize(maxXP.get(), 5);
-        endborder.setSize(maxXP.get(), 5);
+            border.setSize(maxXP.get());
+            netherborder.setSize(maxXP.get(), 5);
+            endborder.setSize(maxXP.get(), 5);
         }
     }
 }
