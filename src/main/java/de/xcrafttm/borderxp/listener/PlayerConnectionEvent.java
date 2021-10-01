@@ -46,6 +46,8 @@ public class PlayerConnectionEvent implements Listener {
         netherborder.setCenter(Objects.requireNonNull(Bukkit.getWorld("world_nether")).getSpawnLocation());
         endborder.setCenter(Objects.requireNonNull(Bukkit.getWorld("world_the_end")).getSpawnLocation());
 
+            player.setLevel(1);
+
             AtomicInteger maxXP = new AtomicInteger(1);
             Bukkit.getOnlinePlayers().forEach(player1 -> {
                 if (maxXP.get() < player1.getLevel())
@@ -53,8 +55,6 @@ public class PlayerConnectionEvent implements Listener {
             });
         netherborder.setSize(maxXP.get(), 5);
         endborder.setSize(maxXP.get(), 5);
-
-        player.setLevel(1);
         }
     }
 }
