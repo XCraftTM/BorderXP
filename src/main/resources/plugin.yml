@@ -1,6 +1,6 @@
 main: de.xcrafttm.borderxp.Main
 name: BorderXP
-version: 1.3
+version: 1.4
 api-version: 1.17
 author: XCraftTM
 website: github.com/XCraftTM/BorderXP
@@ -9,4 +9,8 @@ commands:
   bordertoggle:
     aliases: bt
     description: Toggle BorderXP Challenge
+    usage: /<command>
+  villagetoggle:
+    aliases: vt
+    description: Toggle Village Spawn in Config
     usage: /<command>

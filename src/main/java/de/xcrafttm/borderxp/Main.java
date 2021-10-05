@@ -1,7 +1,9 @@
 package de.xcrafttm.borderxp;
 
 import de.xcrafttm.borderxp.commands.BorderToggle;
+import de.xcrafttm.borderxp.commands.VillageToggle;
 import de.xcrafttm.borderxp.listener.PlayerConnectionEvent;
+import de.xcrafttm.borderxp.utils.BorderConfig;
 import org.bukkit.*;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.event.EventHandler;
@@ -14,11 +16,14 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class Main extends JavaPlugin implements Listener {
 
+    private BorderConfig borderConfig;
+
     public static boolean isEnabled = true;
     private final ConsoleCommandSender console = Bukkit.getConsoleSender();
 
     @Override
     public void onLoad() {
+        borderConfig = new BorderConfig();
         console.sendMessage("§8[§6BorderXP§8] §2Loading Plugin...");
     }
 
@@ -27,6 +32,7 @@ public class Main extends JavaPlugin implements Listener {
         console.sendMessage("§8[§6BorderXP§8] §aPlugin Enabled!");
 
         new BorderToggle(this);
+        new VillageToggle(this);
 
         init();
 
@@ -61,6 +67,10 @@ public class Main extends JavaPlugin implements Listener {
         netherborder.setSize(maxXP.get(), 5);
         endborder.setSize(maxXP.get(), 5);
 
+    }
+
+    public BorderConfig getBorderConfig() {
+        return borderConfig;
     }
 
 }

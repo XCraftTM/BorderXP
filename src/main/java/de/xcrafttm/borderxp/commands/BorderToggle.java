@@ -10,10 +10,7 @@ import java.util.Objects;
 
 public class BorderToggle implements CommandExecutor {
 
-    private final Main plugin;
-
     public BorderToggle(Main plugin) {
-        this.plugin = plugin;
         Objects.requireNonNull(plugin.getCommand("bordertoggle")).setExecutor(this);
     }
 
@@ -24,6 +21,8 @@ public class BorderToggle implements CommandExecutor {
             if (Main.isEnabled) {
                 commandSender.sendMessage("§8[§6BorderXP§8] §6Challenge §aEnabled!");
             } else commandSender.sendMessage("§8[§6BorderXP§8] §6Challenge §cDisabled!");
+        } else {
+            commandSender.sendMessage("§8[§6BorderXP§8] §cConsole is not allowed to use this Command!");
         }
         return true;
     }
