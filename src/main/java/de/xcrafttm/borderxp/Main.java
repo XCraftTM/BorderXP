@@ -10,6 +10,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerLevelChangeEvent;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bstats.bukkit.Metrics;
 
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -29,6 +30,11 @@ public class Main extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
+        // All you have to do is adding the following two lines in your onEnable method.
+        // You can find the plugin ids of your plugins on the page https://bstats.org/what-is-my-plugin-id
+        int pluginId = 12971; // <-- Replace with the id of your plugin!
+        Metrics metrics = new Metrics(this, pluginId);
+
         console.sendMessage("§8[§6BorderXP§8] §aPlugin Enabled!");
 
         new BorderToggle(this);

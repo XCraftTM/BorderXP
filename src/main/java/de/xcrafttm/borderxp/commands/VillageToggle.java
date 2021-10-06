@@ -20,15 +20,14 @@ public class VillageToggle implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
         if (commandSender instanceof Player) {
-            if (plugin.getBorderConfig().getVillageToggle() == "true") {
+            if (Objects.equals(plugin.getBorderConfig().getVillageToggle(), "true")) {
                 plugin.getBorderConfig().setFalse();
                 commandSender.sendMessage("§8[§6BorderXP§8] §cVillage Spawn §lDisabled!");
-                commandSender.sendMessage("§8[§6BorderXP§8] §cYou will need to Reset your World and Restart!");
             } else {
                 plugin.getBorderConfig().setTrue();
                 commandSender.sendMessage("§8[§6BorderXP§8] §aVillage Spawn §lEnabled!");
-                commandSender.sendMessage("§8[§6BorderXP§8] §cYou will need to Reset your World and Restart!");
             }
+            commandSender.sendMessage("§8[§6BorderXP§8] §cYou will need to Reset your World and Restart!");
         } else {
             commandSender.sendMessage("§8[§6BorderXP§8] §cConsole is not allowed to use this Command!");
         }

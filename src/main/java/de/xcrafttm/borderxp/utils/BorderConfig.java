@@ -8,20 +8,20 @@ import java.util.Objects;
 
 public class BorderConfig {
 
-    private final File nameFile;
-    private final YamlConfiguration nameConfig;
+    private final File file;
+    private final YamlConfiguration config;
 
     public BorderConfig() {
 
         File folder = new File("plugins/BorderXP");
-        nameFile = new File(folder.getPath(), "config.yml");
+        file = new File(folder.getPath(), "config.yml");
 
-        nameConfig = YamlConfiguration.loadConfiguration(nameFile);
+        config = YamlConfiguration.loadConfiguration(file);
         asksDefault();
     }
 
     private void asksDefault() {
-        this.askForExists(nameFile, nameConfig, "villagetoggle", "false");
+        this.askForExists(file, config, "villagetoggle", "false");
     }
 
     private void askForExists(File file, YamlConfiguration config, String key, Object value) {
@@ -49,14 +49,14 @@ public class BorderConfig {
     }
 
     public void setTrue() {
-        nameConfig.set("villagetoggle", "true");
-        saveFile(nameFile, nameConfig);
+        config.set("villagetoggle", "true");
+        saveFile(file, config);
     }
     public void setFalse() {
-        nameConfig.set("villagetoggle", "false");
-        saveFile(nameFile, nameConfig);
+        config.set("villagetoggle", "false");
+        saveFile(file, config);
     }
     public String getVillageToggle() {
-        return this.askInConfigString(nameConfig, "villagetoggle");
+        return this.askInConfigString(config, "villagetoggle");
     }
 }

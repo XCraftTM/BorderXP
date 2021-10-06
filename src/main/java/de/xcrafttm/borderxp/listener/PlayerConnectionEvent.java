@@ -23,7 +23,7 @@ public class PlayerConnectionEvent implements Listener {
     public void onFirstJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
         if (!player.hasPlayedBefore()) {
-            if (plugin.getBorderConfig().getVillageToggle() == "true") {
+            if (Objects.equals(plugin.getBorderConfig().getVillageToggle(), "true")) {
                 World world = Bukkit.getWorld("world");
                 Location village = player.getWorld().locateNearestStructure(player.getLocation(), StructureType.VILLAGE, 5000, true);
                 if (village == null) {
