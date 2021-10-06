@@ -5,7 +5,7 @@ Recode of the Border = XP Challenge of BastiGHG
 BorderXP is an Challenge of the Youtuber BastiGHG, in that you have a Worldborder that is at start set to 1x1 blocks and you need to get more XP to make it bigger. (Has Integrated Village Spawn)
 
 ## Requirements
-- Spigot/Paper Server on 1.17.1 Only.  
+- Spigot Server on 1.17.1 Only. (DO NOT USE PAPER!)    
 - At least 4 GB of Ram for the start of the Server
 
 ## Installation
