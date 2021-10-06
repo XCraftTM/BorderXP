@@ -15,3 +15,5 @@ Then You need to put the Plugin into your Servers Plugins Folder and Restart/Res
 ## Having issues or want to help?
 If you need help with BorderXP, or you'd like to help out, you can contact me on Discord(XCraftTM#5396)(I Can Support in German and English). Or Open an GitHub Issue where everyone can discuss your Problem.
 
+
+[![Release](https://bstats.org/signatures/bukkit/BorderXP.svg)](https://bstats.org/plugin/bukkit/BorderXP/12971/)
