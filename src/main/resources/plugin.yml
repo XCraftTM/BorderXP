@@ -1,7 +1,7 @@
 main: de.xcrafttm.borderxp.Main
 name: BorderXP
-version: 1.5
-api-version: 1.17
+version: 1.6
+api-version: 1.13
 author: XCraftTM
 website: github.com/XCraftTM/BorderXP
 
