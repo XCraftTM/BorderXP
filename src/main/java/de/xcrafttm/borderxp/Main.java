@@ -6,18 +6,21 @@ import de.xcrafttm.borderxp.listener.PlayerConnectionEvent;
 import de.xcrafttm.borderxp.utils.BorderConfig;
 import org.bukkit.*;
 import org.bukkit.command.ConsoleCommandSender;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerLevelChangeEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bstats.bukkit.Metrics;
 
 import java.util.Objects;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class Main extends JavaPlugin implements Listener {
 
     private BorderConfig borderConfig;
+    public static int level;
+    public static float exp;
 
     public static boolean isEnabled = true;
     private final ConsoleCommandSender console = Bukkit.getConsoleSender();
@@ -61,18 +64,30 @@ public class Main extends JavaPlugin implements Listener {
     public void onPlayerExpChange(PlayerLevelChangeEvent event) {
         if (!Main.isEnabled)
             return;
-        AtomicInteger maxXP = new AtomicInteger(1);
-        Bukkit.getOnlinePlayers().forEach(player -> {
-            if (maxXP.get() < player.getLevel())
-                maxXP.set(player.getLevel());
-        });
+        if (Bukkit.getServer().getOnlinePlayers().size() >= 2) {
+            float xpfloat = event.getPlayer().getExp();
+            event.getPlayer().sendExperienceChange(xpfloat, event.getPlayer().getLevel());
+            for (Player player : Bukkit.getOnlinePlayers()){
+                if (player != event.getPlayer()) {
+                    player.setLevel(event.getPlayer().getLevel());
+                    player.setExp(event.getPlayer().getExp());
+                    level = event.getPlayer().getLevel();
+                    exp = event.getPlayer().getExp();
+                }
+            }
+        }
         WorldBorder worldborder = Objects.requireNonNull(Bukkit.getWorld("world")).getWorldBorder();
         WorldBorder netherborder = Objects.requireNonNull(Bukkit.getWorld("world_nether")).getWorldBorder();
         WorldBorder endborder = Objects.requireNonNull(Bukkit.getWorld("world_the_end")).getWorldBorder();
-        worldborder.setSize(maxXP.get(), 5);
-        netherborder.setSize(maxXP.get(), 5);
-        endborder.setSize(maxXP.get(), 5);
+        worldborder.setSize(event.getPlayer().getLevel(), 3);
+        netherborder.setSize(event.getPlayer().getLevel(), 3);
+        endborder.setSize(event.getPlayer().getLevel(), 3);
+    }
 
+    @EventHandler
+    public void whenPlayerDeath(PlayerDeathEvent e) {
+        e.setKeepLevel(true);
+        e.setDroppedExp(0);
     }
 
     public BorderConfig getBorderConfig() {
