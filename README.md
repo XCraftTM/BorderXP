@@ -15,5 +15,7 @@ Then You need to put the Plugin into your Servers Plugins Folder and Restart/Res
 ## Having issues or want to help?
 If you need help with BorderXP, or you'd like to help out, you can go on the BorderXP-Support Discord(https://discord.gg/jZQmRyASSC)(I Can Support in German and English). Or Open an GitHub Issue where everyone can discuss your Problem.
 
+Big Thanks goes to SaveFeelix and PearAPI
+
 
 [![Release](https://bstats.org/signatures/bukkit/BorderXP.svg)](https://bstats.org/plugin/bukkit/BorderXP/12971/)
