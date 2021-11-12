@@ -13,7 +13,7 @@ Go to [Releases](https://github.com/XCraftTM/BorderXP/releases) and Download the
 Then You need to put the Plugin into your Servers Plugins Folder and Restart/Reset the Server, important is that you reset your World or else it wont work.
 
 ## Having issues or want to help?
-If you need help with BorderXP, or you'd like to help out, you can go on the BorderXP-Support Discord(https://discord.gg/jZQmRyASSC)(I Can Support in German and English). Or Open an GitHub Issue where everyone can discuss your Problem.
+If you need help with BorderXP, or you'd like to help out, you can go on the BorderXP-Support Discord(https://discord.gg/jZQmRyASSC) (I Can Support in German and English). Or Open an GitHub Issue where everyone can discuss your Problem.
 
 Big Thanks goes to SaveFeelix and PearAPI
 
